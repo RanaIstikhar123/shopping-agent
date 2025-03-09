@@ -45,7 +45,7 @@ GEMINI_API_KEY=your_api_key_here
 
 1. Start the Chainlit interface:
 ```bash
-chainlit run src/shooping_agent/chainlit_shopping.py -w
+chainlit run shopping_agent/src/shopping_agent/chainlit_shopping.py -w
 ```
 
 2. Open your browser and navigate to `http://localhost:8000`
