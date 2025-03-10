@@ -1,0 +1,3 @@
+"""
+Shopping Crew package
+""" 

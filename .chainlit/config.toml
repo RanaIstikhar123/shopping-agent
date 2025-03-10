@@ -2,9 +2,8 @@
 # Whether to enable telemetry (default: true). No personal data is collected.
 enable_telemetry = true
 
-
 # List of environment variables to be provided by each user to use the app.
-user_env = []
+user_env = ["GEMINI_API_KEY"]
 
 # Duration (in seconds) during which the session is saved when the connection is lost
 session_timeout = 3600
@@ -13,10 +12,16 @@ session_timeout = 3600
 user_session_timeout = 1296000  # 15 days
 
 # Enable third parties caching (e.g LangChain cache)
-cache = false
+cache = true
 
 # Authorized origins
 allow_origins = ["*"]
+
+# Follow symlink for asset mount
+follow_symlink = false
+
+# The value of the chainlit_server_url field in the pyproject.toml file
+chainlit_server_url = "http://localhost:8000"
 
 [features]
 # Process and display HTML in messages. This can be a security risk (see https://stackoverflow.com/questions/19603097/why-is-it-dangerous-to-render-user-generated-html-or-javascript)
@@ -52,15 +57,30 @@ edit_message = true
     sample_rate = 24000
 
 [UI]
-# Name of the assistant.
-name = "Assistant"
+# Name of the app and chatbot.
+name = "AI Shopping Assistant"
 
-# default_theme = "dark"
+# Description of the app and chatbot. This is used for HTML tags.
+description = "Your personal AI shopping assistant that helps you find the perfect products based on your requirements, budget, and preferences."
 
-# layout = "wide"
+# The default value for the expand messages settings.
+default_expand_messages = false
 
-# Description of the assistant. This is used for HTML tags.
-# description = ""
+# Hide the chain of thought details from the user.
+hide_cot = false
+
+# Link to your github repo. This will add a github button in the UI's header.
+github = ""
+
+# Override default MUI light theme. (Check theme.ts)
+[UI.theme.light]
+background = "#FFFFFF"
+paper = "#F5F5F5"
+
+# Override default MUI dark theme. (Check theme.ts)
+[UI.theme.dark]
+background = "#1A1A1A"
+paper = "#242424"
 
 # Chain of Thought (CoT) display mode. Can be "hidden", "tool_call" or "full".
 cot = "full"
@@ -88,4 +108,7 @@ cot = "full"
 #     url = "https://github.com/Chainlit/chainlit/issues"
 
 [meta]
+# Meta tags for HTML
+title = "AI Shopping Assistant"
+description = "Your personal AI shopping assistant that helps you find the perfect products"
 generated_by = "2.2.1"
